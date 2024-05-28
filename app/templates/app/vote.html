@@ -1,0 +1,17 @@
+<h1>{{poll.name}}</h1>
+
+
+
+<form action="" method="post">
+    {% csrf_token %}
+    <select name="choice">
+        <option value=""></option>
+        {% for choice in choices %}
+        <option value="{{choice.id}}"> {{choice.name}}</option>
+
+         {% endfor %}
+
+    </select>
+    <button>Submit</button>
+
+</form>
